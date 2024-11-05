@@ -1,14 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Information Form</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <form enctype="multipart/form-data" action="index.html" method="get">
-        <!-- FORM FIELDS HERE -->
-    </form>
+    <div class="container">
+        <form enctype="multipart/form-data" action="index.html" method="get">
+            <div class="forms_container">
+                <fieldset class="person_field">
+                    <legend>
+                        <fieldset class="person_tittle">Personal Information</fieldset>
+                    </legend>
+                    <label for="name">Name:</label>
+                    <input type="text" name="Name" id="name">
+                    <label for="email">Email:</label>
+                    <input type="email" name="Email" id="email" pattern="[A-Za-z0-9]+@[A-Za-z]+\.com" required>
+                    <label for="password">Password:</label>
+                    <input type="password" name="Password" id="password" pattern="[A-Za-z0-9] {12,}">
+                    <label for="birth">Date of Birth:</label>
+                    <input type="date" name="Date of Bith" id="birth">
+                </fieldset>
+
+                <fieldset class="preferences_field">
+                    <legend>
+                        <fieldset class="abt_tittle">Preferences</fieldset>
+                    </legend>
+                    <label for="color">Favorite Color:</label>
+                    <input type="color" name="Favorite_Color" id="color">
+                    <div class="hobbies">
+                        <label for="hobby">Hobby:</label>
+                        <input type="text" list="hobby" name="Hobby">
+                        <datalist id="hobby">
+                            <option value="Drawing"></option>
+                            <option value="Swimming"></option>
+                            <option value="Dancing"></option>
+                        </datalist>
+                    </div>
+                    <div class="xp">
+                        <label for="exp">Experience Level:</label>
+                        <input type="range" name="expLevel" min="0" max="10" step="1">
+                    </div>
+                </fieldset>
+
+                <fieldset class="contact_field">
+                    <legend>
+                        <fieldset class="contact_tittle">Contact Preferences</fieldset>
+                    </legend>
+                    <div class="method">
+                        <label for="preferred">Preferred Contact Method:</label>
+                        <select name="contact" id="preferred">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="mail">Mail</option>
+                        </select>
+                    </div>
+                    <div class="newsletter">
+                        <label for="newsletter">Subscribe to Newsletter</label>
+                        <input type="checkbox" value="newsletter" id="newsletter">
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="gender_field">
+                    <legend>
+                        <fieldset class="gender_tittle">Preferences</fieldset>
+                    </legend>
+                    <span>Gender:</span>
+                    <div class="gender_options">
+                        <div class="separator">
+                            <input type="radio" name="gender" value="male" id="male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="separator">
+                            <input type="radio" name="gender" value="female" id="female">
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="separator">
+                            <input type="radio" name="gender" value="other" id="other">
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="info_field">
+                    <legend>
+                        <fieldset class="info_tittle">More Information</fieldset>
+                    </legend>
+                    <div class="info_div">
+                        <span class="separator">Bio:</span>
+                        <textarea name="message" rows="5" class="text_area"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="upload_field">
+                    <legend>
+                        <fieldset class="upload_tittle">Upload Documents</fieldset>
+                    </legend>
+                    <span class="file_text">Resume and otger certificates:</span>
+                    <fieldset class="file_field">
+                        <input type="file" name="file" id="file" accept="doc, docx, pdf, jpg, png">
+                    </fieldset>
+                </fieldset>
+
+
+                <fieldset class="submission_field">
+                    <legend>
+                        <fieldset class="submission_tittle">Submission</fieldset>
+                    </legend>
+                    <div class="buttons">
+                        <button class="reset_btn" type="reset">Reset</button>
+                        <button class="submit_btn" type="submit">Submit</button>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
